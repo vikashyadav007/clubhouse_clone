@@ -23,17 +23,23 @@ const Welcome = props => {
         </Text>
       </View>
       <View style={styles.bottomItem}>
-        <View style={styles.container}>
-          <Image
-            source={celebration}
-            style={styles.celebration_image}
-            resizeMode="cover"
-          />
-          <Text style={{...fontStyles.SemiBold, ...styles.welcomeText}}>
-            Welcome in!
-          </Text>
-          <AntDesign name="arrowright" color={colors.white} size={20} />
-        </View>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => {
+            props.navigation.navigate('PhoneNumber');
+          }}>
+          <View style={styles.container}>
+            <Image
+              source={celebration}
+              style={styles.celebration_image}
+              resizeMode="cover"
+            />
+            <Text style={{...fontStyles.SemiBold, ...styles.welcomeText}}>
+              Welcome in!
+            </Text>
+            <AntDesign name="arrowright" color={colors.white} size={20} />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
