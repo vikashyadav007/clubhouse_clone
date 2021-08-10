@@ -8,8 +8,12 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const NextButton = props => {
   return (
-    <TouchableOpacity>
-      <View style={styles.blueContainer}>
+    <TouchableOpacity
+      activeOpacity={props.opacity === 0.5 ? 1 : 0.6}
+      onPress={() => {
+        props.opacity === 1 && props.onPress();
+      }}>
+      <View style={{...styles.blueContainer, opacity: props.opacity}}>
         <Text style={{...fontStyles.SemiBold, ...styles.text}}>Next</Text>
         <AntDesign name="arrowright" color={colors.white} size={20} />
       </View>
