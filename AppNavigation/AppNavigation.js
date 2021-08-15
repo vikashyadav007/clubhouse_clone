@@ -5,12 +5,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Welcome from '../screens/Welcome/Welcome';
 import PhoneNumber from '../screens/PhoneNumber/PhoneNumber';
 import OtpSCreen from '../screens/OtpScreen/OtpScreen';
+import FullName from '../screens/FullName/FullName';
 
 const flowStack = createStackNavigator();
 
 function FlowStack() {
   return (
-    <flowStack.Navigator initialRouteName="OtpSCreen">
+    <flowStack.Navigator initialRouteName="FullName">
       <flowStack.Screen
         name="Welcome"
         component={Welcome}
@@ -24,6 +25,11 @@ function FlowStack() {
       <flowStack.Screen
         name="OtpSCreen"
         component={OtpSCreen}
+        options={{headerShown: false}}
+      />
+      <flowStack.Screen
+        name="FullName"
+        component={FullName}
         options={{headerShown: false}}
       />
     </flowStack.Navigator>

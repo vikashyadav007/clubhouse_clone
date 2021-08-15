@@ -43,7 +43,9 @@ const OtpSCreen = props => {
         </Text>
       </View>
       <View style={styles.bottomView}>
-        <NextButton opacity={otp ? (otp.length === 6 ? 1 : 0.5) : 0.5} />
+        <NextButton opacity={otp ? (otp.length === 6 ? 1 : 0.5) : 0.5} onPress={()=>{
+          props.navigation.navigate('FullName');
+        }}/>
       </View>
     </View>
   );
