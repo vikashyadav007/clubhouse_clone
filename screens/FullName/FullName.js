@@ -56,6 +56,9 @@ const FullName = props => {
                 : 0.5
               : 0.5
           }
+          onPress={() => {
+            props.navigation.navigate('UserName');
+          }}
         />
       </View>
     </View>
