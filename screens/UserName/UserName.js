@@ -61,7 +61,12 @@ const UserName = props => {
         </Text>
       </View>
       <View style={styles.bottomView}>
-        <NextButton opacity={getOpacity()} />
+        <NextButton
+          opacity={getOpacity()}
+          onPress={() => {
+            props.navigation.navigate('AddPhoto');
+          }}
+        />
       </View>
     </View>
   );

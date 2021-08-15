@@ -7,6 +7,7 @@ import PhoneNumber from '../screens/PhoneNumber/PhoneNumber';
 import OtpSCreen from '../screens/OtpScreen/OtpScreen';
 import FullName from '../screens/FullName/FullName';
 import UserName from '../screens/UserName/UserName';
+import AddPhoto from '../screens/AddPhoto/AddPhoto';
 
 const flowStack = createStackNavigator();
 
@@ -36,6 +37,11 @@ function FlowStack() {
       <flowStack.Screen
         name="UserName"
         component={UserName}
+        options={{headerShown: false}}
+      />
+      <flowStack.Screen
+        name="AddPhoto"
+        component={AddPhoto}
         options={{headerShown: false}}
       />
     </flowStack.Navigator>
