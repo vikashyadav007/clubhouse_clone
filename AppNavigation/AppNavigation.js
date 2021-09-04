@@ -15,7 +15,7 @@ const flowStack = createStackNavigator();
 
 function FlowStack() {
   return (
-    <flowStack.Navigator initialRouteName="Welcome">
+    <flowStack.Navigator initialRouteName="FollowFriends">
       <flowStack.Screen
         name="Welcome"
         component={Welcome}
