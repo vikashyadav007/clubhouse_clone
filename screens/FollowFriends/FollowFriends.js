@@ -4,11 +4,13 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import colors from '../../utils/colors';
 import fontStyles from '../../utils/fontStyles';
 import NextButton from '../../components/NextButton';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import ItemView from './components/ItemView';
 import {ScrollView} from 'react-native-gesture-handler';
+import AlertModal from './components/AlertModal';
 
 const FollowFriends = props => {
+  const ourSuggestion = [1, 2, 3];
+  const [visible, setVisible] = useState(false);
   const [data, setData] = useState([
     {
       id: 1,
@@ -72,7 +74,7 @@ const FollowFriends = props => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE6QTEi6fM5z6La1_lq9X3PhKi5F5zSXf81A&usqp=CAU',
     },
   ]);
-  const [selected, setSelected] = useState([1, 2, 3, 6]);
+  const [selected, setSelected] = useState(ourSuggestion);
 
   function handleFollow(id) {
     if (selected.includes(id)) {
@@ -82,8 +84,21 @@ const FollowFriends = props => {
     }
   }
 
+  function handleCancel() {
+    setVisible(false);
+  }
+  function handleSubmit() {
+    setVisible(false);
+    props.navigation.navigate('Welcome');
+  }
+
   return (
     <View style={styles.screen}>
+      <AlertModal
+        visible={visible}
+        handleCancel={handleCancel}
+        handleSubmit={handleSubmit}
+      />
       <View style={styles.topView}>
         <Text style={{...fontStyles.SemiBold, ...styles.topText}}>
           Follow new friends to have access to their rooms
@@ -120,7 +135,11 @@ const FollowFriends = props => {
           text={selected.length === 0 ? 'Skip this' : 'Follow'}
           opacity={1}
           onPress={() => {
-            // props.navigation.navigate('UserName');
+            if (selected.length === 0) {
+              setVisible(true);
+            } else {
+              props.navigation.navigate('Welcome');
+            }
           }}
         />
         <Text
@@ -128,6 +147,8 @@ const FollowFriends = props => {
           onPress={() => {
             if (selected.length !== 0) {
               setSelected([]);
+            } else {
+              setSelected(ourSuggestion);
             }
           }}>
           {selected.length === 0
