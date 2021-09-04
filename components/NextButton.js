@@ -14,7 +14,9 @@ const NextButton = props => {
         props.opacity === 1 && props.onPress();
       }}>
       <View style={{...styles.blueContainer, opacity: props.opacity}}>
-        <Text style={{...fontStyles.SemiBold, ...styles.text}}>Next</Text>
+        <Text style={{...fontStyles.SemiBold, ...styles.text}}>
+          {props.text}
+        </Text>
         <AntDesign name="arrowright" color={colors.white} size={20} />
       </View>
     </TouchableOpacity>

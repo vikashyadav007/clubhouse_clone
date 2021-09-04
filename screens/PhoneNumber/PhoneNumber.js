@@ -63,6 +63,7 @@ const PhoneNumber = props => {
       </View>
       <View style={styles.bottomView}>
         <NextButton
+          text="Next"
           opacity={number ? (number.length === 11 ? 1 : 0.5) : 0.5}
           onPress={() => {
             props.navigation.navigate('OtpSCreen');

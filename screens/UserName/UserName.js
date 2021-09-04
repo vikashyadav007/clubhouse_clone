@@ -62,6 +62,7 @@ const UserName = props => {
       </View>
       <View style={styles.bottomView}>
         <NextButton
+          text="Next"
           opacity={getOpacity()}
           onPress={() => {
             props.navigation.navigate('AddPhoto');

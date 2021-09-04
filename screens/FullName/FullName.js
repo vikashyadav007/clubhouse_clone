@@ -20,6 +20,7 @@ const FullName = props => {
         <View style={styles.nameRow}>
           <View style={styles.whiteContainer}>
             <TextInput
+              autoCapitalize="characters"
               placeholder="First"
               style={{...fontStyles.SemiBold, ...styles.textInput}}
               keyboardType="default"
@@ -32,6 +33,7 @@ const FullName = props => {
           </View>
           <View style={styles.whiteContainer}>
             <TextInput
+              autoCapitalize="characters"
               placeholder="Last"
               style={{...fontStyles.SemiBold, ...styles.textInput}}
               keyboardType="default"
@@ -49,6 +51,7 @@ const FullName = props => {
       </View>
       <View style={styles.bottomView}>
         <NextButton
+          text="Next"
           opacity={
             first && last
               ? first.length >= 1 && last.length >= 1

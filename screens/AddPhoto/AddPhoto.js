@@ -11,7 +11,13 @@ const FullName = props => {
   return (
     <View style={styles.screen}>
       <View style={styles.topView}>
-        <Text style={{...fontStyles.SemiBold, ...styles.skipText}}>Skip</Text>
+        <Text
+          style={{...fontStyles.SemiBold, ...styles.skipText}}
+          onPress={() => {
+            props.navigation.navigate('ShareInvites');
+          }}>
+          Skip
+        </Text>
         <Text style={{...fontStyles.SemiBold, ...styles.topText}}>
           Great! Now add a Photo?
         </Text>
@@ -23,9 +29,10 @@ const FullName = props => {
       </View>
       <View style={styles.bottomView}>
         <NextButton
+          text="Next"
           opacity={0.5}
           onPress={() => {
-            props.navigation.navigate('UserName');
+            // props.navigation.navigate('UserName');
           }}
         />
       </View>
@@ -57,7 +64,7 @@ const styles = StyleSheet.create({
   whiteContainer: {
     backgroundColor: colors.white,
     borderRadius: 70,
-    height: 180,
+    height: 170,
     width: 170,
     alignItems: 'center',
     justifyContent: 'center',

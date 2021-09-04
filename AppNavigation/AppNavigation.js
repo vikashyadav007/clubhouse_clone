@@ -8,12 +8,14 @@ import OtpSCreen from '../screens/OtpScreen/OtpScreen';
 import FullName from '../screens/FullName/FullName';
 import UserName from '../screens/UserName/UserName';
 import AddPhoto from '../screens/AddPhoto/AddPhoto';
+import ShareInvites from '../screens/ShareInvites/ShareInvites';
+import FollowFriends from '../screens/FollowFriends/FollowFriends';
 
 const flowStack = createStackNavigator();
 
 function FlowStack() {
   return (
-    <flowStack.Navigator initialRouteName="UserName">
+    <flowStack.Navigator initialRouteName="Welcome">
       <flowStack.Screen
         name="Welcome"
         component={Welcome}
@@ -42,6 +44,16 @@ function FlowStack() {
       <flowStack.Screen
         name="AddPhoto"
         component={AddPhoto}
+        options={{headerShown: false}}
+      />
+      <flowStack.Screen
+        name="ShareInvites"
+        component={ShareInvites}
+        options={{headerShown: false}}
+      />
+      <flowStack.Screen
+        name="FollowFriends"
+        component={FollowFriends}
         options={{headerShown: false}}
       />
     </flowStack.Navigator>
